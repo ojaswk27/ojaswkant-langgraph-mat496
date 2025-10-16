@@ -17,10 +17,12 @@ The third video explains how chains in language model applications are "fixed se
 ## Video 4: Router
 [router.ipynb](resources/module%201/router.ipynb)
 Routers are simple decision-makers that direct the flow of your AI agent based on current conditions, like choosing the next step in a conversation. They act as "if-then" switches, preventing the agent from always following the same path, which makes workflows smarter and more efficient.
+![img2](img2.png)
 
 ## Video 5: Agents
 [agent.ipynb](resources/module%201/agent.ipynb)
 The video shows how to build useful LangGraph agents, smart AI that lets the LLM decide steps on the fly, unlike fixed chains. It covers easy routers for quick choices, ReAct loops for tool-using agents, adding memory for ongoing chats, and testing in Studio with math examples.
+![img3](img3.png)
 
 ## Video 6: Agent with memory 
 [agent-memory.ipynb](resources/module%201/agent-memory.ipynb)
