@@ -35,3 +35,6 @@ Using all that we have learnt by now, I have made a code reviewing and editing a
 ## Optional Video: Deployment:
 [deployment.ipynb](resources/module%201/deployment.ipynb)
 The last video teaches deploying LangGraph agents to production using LangGraph Cloud, which hosts graphs as APIs for scalable, monitored applications, while integrating with LangSmith for tracing and debugging executions in real-time. It covers packaging code via GitHub, local testing with SDKs, and transitioning from development (e.g., Studio) to hosted environments for reliable, multi-user access without managing infrastructure.
+
+### Note: 
+I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
