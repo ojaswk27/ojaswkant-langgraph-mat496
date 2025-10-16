@@ -7,3 +7,5 @@ This is a video about simple graphs and their construction. Here we learn how to
 This video introduces us to LangSmith Studio, a tool for viewing and "chatting" to our graphs. LangChain calls this a "agent IDE" and we can use this to visualize, interact with, and debug complex agentic applications. I have set it up and gotten it running, but it requires an OpenAI API key, which I hope to replace with an Anthropic key.
 ![img](img.png)
 
+## Video 3: Chains
+The third video explains how chains in language model applications are "fixed sequences of steps around model calls", ensuring reliability. The video compares chains with agents that dynamically control flow.
