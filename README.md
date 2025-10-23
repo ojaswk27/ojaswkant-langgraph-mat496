@@ -44,7 +44,11 @@ This video teaches about how to define and use different state schemas (TypeDict
 
 ## Video 2: State Reducers
 [state-reducers.ipynb](resources/module%202/state-reducers.ipynb)
-This video teachers how to control state updates in nodes using reducers (functions that control how updates to the state are applied when multiple nodes may update the same key simultaneously) for both simple overwrites and complex merges. Added a custom example for a real-life scenario. 
+This video teachers how to control state updates in nodes using reducers (functions that control how updates to the state are applied when multiple nodes may update the same key simultaneously) for both simple overwrites and complex merges. Added a custom example for a real-life scenario.
+
+## VIdeo 3: Multiple Schemas
+[multiple-schemas.ipynb](resources/module%202/multiple-schemas.ipynb)
+This video is about multiple state schemas, done by defining searate input, output and internal state schemas. This enables better control over what the graph accepts as input what it processes internally, and what it returns as output.
 
 ### Note: 
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
