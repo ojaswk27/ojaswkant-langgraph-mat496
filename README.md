@@ -36,5 +36,11 @@ Using all that we have learnt by now, I have made a code reviewing and editing a
 [deployment.ipynb](resources/module%201/deployment.ipynb)
 The last video teaches deploying LangGraph agents to production using LangGraph Cloud, which hosts graphs as APIs for scalable, monitored applications, while integrating with LangSmith for tracing and debugging executions in real-time. It covers packaging code via GitHub, local testing with SDKs, and transitioning from development (e.g., Studio) to hosted environments for reliable, multi-user access without managing infrastructure.
 
+# State and Memory; Module 2
+
+## VIdeo 1: State Schema
+[state-schema.ipynb](resources/module%202/state-schema.ipynb)
+This video teaches about how to defin e and use different state schemas (TypeDict, dataclasses, Pydantic) in LangGraph to represent and validate the structure of our agent's state. We learn their flexibilities and runtime validation characteristics. Added a few new moods to test and learn.
+
 ### Note: 
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
