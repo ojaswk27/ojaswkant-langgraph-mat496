@@ -53,10 +53,12 @@ This video is about multiple state schemas, done by defining searate input, outp
 ## Video 4: Trim Filter Messages
 [trim-filter-messages.ipynb](resources/module%202/trim-filter-messages.ipynb)
 This video covers techniques to trim and filter messages, including trimming messages by token count to reduce token usage. Using predefined methods like trimMessages to keep only the most revent relevant message when invoking the chat model helps.
+Changed the default conversation about marine life into a conversation about mythology.
 
 ## Video 5: Chatbot with Summarizing Messages and History
 [chatbot-summarization.ipynb](resources/module%202/chatbot-summarization.ipynb)
 In this video we build a chatbot that summarizes long conversations, periodically compressing the chat history into a running summary stored in state to reduce token usage and improve efficiency in long conversations.
+
 
 
 ### Note: 
