@@ -40,7 +40,11 @@ The last video teaches deploying LangGraph agents to production using LangGraph 
 
 ## VIdeo 1: State Schema
 [state-schema.ipynb](resources/module%202/state-schema.ipynb)
-This video teaches about how to defin e and use different state schemas (TypeDict, dataclasses, Pydantic) in LangGraph to represent and validate the structure of our agent's state. We learn their flexibilities and runtime validation characteristics. Added a few new moods to test and learn.
+This video teaches about how to define and use different state schemas (TypeDict, dataclasses, Pydantic) in LangGraph to represent and validate the structure of our agent's state. We learn their flexibilities and runtime validation characteristics. Added a few new moods to test and learn.
+
+## VIdeo 2: State Reducers
+[state-reducers.ipynb](resources/module%202/state-reducers.ipynb)
+This video teachers how to control state updates in nodes using reducers (functions that control how updates to the state are applied when multiple nodes may update the same key simultaneously) for both simple overwrites and complex merges. Added a custom example for a real-life scenario. 
 
 ### Note: 
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
