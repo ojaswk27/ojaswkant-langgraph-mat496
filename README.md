@@ -59,7 +59,14 @@ Changed the default conversation about marine life into a conversation about myt
 [chatbot-summarization.ipynb](resources/module%202/chatbot-summarization.ipynb)
 In this video we build a chatbot that summarizes long conversations, periodically compressing the chat history into a running summary stored in state to reduce token usage and improve efficiency in long conversations.
 
+## Video 6: Chatbot with Summarizing Messages and External Memory
+[chatbot-external-memory.ipynb](resources/module%202/chatbot-external-memory.ipynb)
+This video extends the previous one by adding persistent external memory using checkpointers backed by databases like SQLite or PostgreSQL, allowing the conversation history and summaries to persist across notebook sessions or server restarts, enabling effective long-term memory.
 
+We can also see this in actiong using LangGraph Studio
+
+![img4](img4.png)
+![img5](img5..png)
 
 ### Note: 
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
