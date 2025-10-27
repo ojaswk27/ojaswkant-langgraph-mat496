@@ -74,5 +74,10 @@ We can also see this in actiong using LangGraph Studio
 [streaming-interruption.ipynb](resources/module%203/streaming-interruption.ipynb)
 The first video teaches LangGraph's streaming system, which has two modes: values (gives you the full accumulated state of the graph after each node) and updates (only gives the incremental state changes made by each node), and also token-level streaming from the LLM using .stream_events() to display AI responses in real time.
 
+## Video 2: Breakpoints
+[breakpoints.ipynb](resources/module%203/breakpoints.ipynb)
+The second video about breakpoints teaches LangGraph's interrupt mechanism to stop graph execution at nodes of our choice (interrupt_before or interrupt_after), allowing for human intervention, state inspection/editing via update_state(), and resuming execution by passing None with the thread ID.
+added additional nodes in order to test the control flow of the graph and its tool calling, and how it reflects on these breakpoints.
+![img_1.png](img_1.png)
 
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
