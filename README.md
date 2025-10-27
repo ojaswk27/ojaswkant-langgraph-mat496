@@ -73,18 +73,24 @@ We can also see this in actiong using LangGraph Studio
 ## Video 1: Streaming
 [streaming-interruption.ipynb](resources/module%203/streaming-interruption.ipynb)
 The first video teaches LangGraph's streaming system, which has two modes: values (gives you the full accumulated state of the graph after each node) and updates (only gives the incremental state changes made by each node), and also token-level streaming from the LLM using .stream_events() to display AI responses in real time.
+I have made an application for this that reviews code.
+[code_review_assistant.ipynb](resources/module%203/code_review_assistant.ipynb)
 
 ## Video 2: Breakpoints
 [breakpoints.ipynb](resources/module%203/breakpoints.ipynb)
 The second video about breakpoints teaches LangGraph's interrupt mechanism to stop graph execution at nodes of our choice (interrupt_before or interrupt_after), allowing for human intervention, state inspection/editing via update_state(), and resuming execution by passing None with the thread ID.
 added additional nodes in order to test the control flow of the graph and its tool calling, and how it reflects on these breakpoints.
 ![img_1.png](img_1.png)
+I have made an application for this that approves budget and breaks when the budget is exceeded.
+[budget_approval.ipynb](resources/module%203/budget_approval.ipynb)
 
 ## Video 3: Editing state and Human Feedback
 [edit-state-human-feedback.ipynb](resources/module%203/edit-state-human-feedback.ipynb)
 The third video teaches how to modify graph state at breakpoints using update_state(), the concept of "dummy nodes" is introduced (using the as_node parameter) giving us the ability to inject human feedback as if that node executed. Also dynamic breakpoints using NodeInterrupt can be used to pause based on runtime conditions.
 ![img_2.png](img_2.png)
 We can also add interrupts in studio using the UI.
+I have created a content modetation application using this.
+[content_moderation.ipynb](resources/module%203/content_moderation.ipynb)
 
 ## Video 4: Dynamic Breakpoints
 [dynamic-breakpoints.ipynb](resources/module%203/dynamic-breakpoints.ipynb)
@@ -95,6 +101,5 @@ We can see how it breaks when we have an input longer than 5 characters.
 ## Video 5: Time Travel
 [time-travel.ipynb](resources/module%203/time-travel.ipynb)
 The last video in this module shows how LangGraph saves every graph step as a checkpoint, allowing us to go back in time and see how the graph evolved over time. We can also see how to use the time travel feature in Studio. This is helpful to create new branches, forks and paths that we can explore for debugging, and testing scenarios. We also avoid rerunning the entire graph from the beginning, which saves on token usage and time.
-
 
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
