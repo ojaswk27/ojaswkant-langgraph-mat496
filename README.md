@@ -68,5 +68,11 @@ We can also see this in actiong using LangGraph Studio
 ![img4](img4.png)
 ![img5](img5..png)
 
-### Note: 
+# UX and Human in the Loop; Module 3
+
+## Video 1: Streaming
+[streaming-interruption.ipynb](resources/module%203/streaming-interruption.ipynb)
+The first video teaches LangGraph's streaming system, which has two modes: values (gives you the full accumulated state of the graph after each node) and updates (only gives the incremental state changes made by each node), and also token-level streaming from the LLM using .stream_events() to display AI responses in real time.
+
+
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
