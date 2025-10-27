@@ -89,7 +89,12 @@ We can also add interrupts in studio using the UI.
 ## Video 4: Dynamic Breakpoints
 [dynamic-breakpoints.ipynb](resources/module%203/dynamic-breakpoints.ipynb)
 The fourth video focuses on a subtype of breakpoints where we can use NodeInterrupt to make our graph pause itself given some conditions are true. To continue after the pause, we update the state with update_state() as previously taught. 
+![img_3.png](img_3.png)
+We can see how it breaks when we have an input longer than 5 characters.
 
+## Video 5: Time Travel
+[time-travel.ipynb](resources/module%203/time-travel.ipynb)
+The last video in this module shows how LangGraph saves every graph step as a checkpoint, allowing us to go back in time and see how the graph evolved over time. We can also see how to use the time travel feature in Studio. This is helpful to create new branches, forks and paths that we can explore for debugging, and testing scenarios. We also avoid rerunning the entire graph from the beginning, which saves on token usage and time.
 
 
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
