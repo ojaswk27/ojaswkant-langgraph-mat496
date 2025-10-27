@@ -80,4 +80,10 @@ The second video about breakpoints teaches LangGraph's interrupt mechanism to st
 added additional nodes in order to test the control flow of the graph and its tool calling, and how it reflects on these breakpoints.
 ![img_1.png](img_1.png)
 
+## Video 3: Editing state and Human Feedback
+[edit-state-human-feedback.ipynb](resources/module%203/edit-state-human-feedback.ipynb)
+The third video teaches how to modify graph state at breakpoints using update_state(), the concept of "dummy nodes" is introduced (using the as_node parameter) giving us the ability to inject human feedback as if that node executed. Also dynamic breakpoints using NodeInterrupt can be used to pause based on runtime conditions.
+![img_2.png](img_2.png)
+We can also add interrupts in studio using the UI.
+
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
