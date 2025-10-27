@@ -86,4 +86,10 @@ The third video teaches how to modify graph state at breakpoints using update_st
 ![img_2.png](img_2.png)
 We can also add interrupts in studio using the UI.
 
+## Video 4: Dynamic Breakpoints
+[dynamic-breakpoints.ipynb](resources/module%203/dynamic-breakpoints.ipynb)
+The fourth video focuses on a subtype of breakpoints where we can use NodeInterrupt to make our graph pause itself given some conditions are true. To continue after the pause, we update the state with update_state() as previously taught. 
+
+
+
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
