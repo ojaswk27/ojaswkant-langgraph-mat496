@@ -119,7 +119,12 @@ This lesson is about how to create nested graphs with independent states used fo
 Thought of and made an application for this demonstrating how this can be useful in a medical scenario, using both paralell and sub-graphs.
 ![img_5.png](img_5.png)
 
-## Video 3: 
+## Video 3: Map-reduce
+[map-reduce.ipynb](resources/module%204/map-reduce.ipynb)
+[literature_review.ipynb](resources/module%204/literature_review.ipynb)
+The third video teaches map-reduce, which is a way to break big tasks into smaller pieces and run them all at once. The map phase uses the send() API to automatically create multiple copies of a node for each item in a list (like making a joke about different animals). These nodes all run at the same time and write their results to a shared list using a reducer
+The reduce phase combines all those results together (like picking the best joke from all the ones you made). You don't need to know how many items you'll have ahead of time, the graph creates the right number of nodes automatically.
+
 
 
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
