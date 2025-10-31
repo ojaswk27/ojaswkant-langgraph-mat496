@@ -102,4 +102,11 @@ We can see how it breaks when we have an input longer than 5 characters.
 [time-travel.ipynb](resources/module%203/time-travel.ipynb)
 The last video in this module shows how LangGraph saves every graph step as a checkpoint, allowing us to go back in time and see how the graph evolved over time. We can also see how to use the time travel feature in Studio. This is helpful to create new branches, forks and paths that we can explore for debugging, and testing scenarios. We also avoid rerunning the entire graph from the beginning, which saves on token usage and time.
 
+# Building our Assitant; Module 4
+
+## Video 1: Parallelization
+[parallelization.ipynb](resources/module%204/parallelization.ipynb)
+This video teaches how to implement fan-out and fan-in patterns where multiple nodes can run simultaneously in LangGraph. The graph waits for every parallel branch to complete before proceeding, and order can be controlled using reducers. The example given is for Tavily and Wikipedia in parallel, which combines the results at the end for LLM processing.
+Since we are heading towards a more research oriented application, I replaced Wikipedia with ArXiv, and also claude instead of chatgpt. ArXiv is an open-access online repo for scientific articles and papers, mostly in fields like physics, mathematics, computer science and more.
+
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.

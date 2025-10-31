@@ -8,11 +8,11 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_community.document_loaders import WikipediaLoader
 from langchain_tavily import TavilySearch  # updated 1.0
 
-from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 
 from langgraph.graph import StateGraph, START, END
 
-llm = ChatOpenAI(model="gpt-4o", temperature=0) 
+llm = ChatAnthropic(model="claude-haiku-4-5-20251001", temperature=0) 
 
 class State(TypedDict):
     question: str

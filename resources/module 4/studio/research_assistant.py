@@ -6,14 +6,14 @@ from typing_extensions import TypedDict
 from langchain_community.document_loaders import WikipediaLoader
 from langchain_tavily import TavilySearch  # updated 1.0
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage, get_buffer_string
-from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 
 from langgraph.constants import Send
 from langgraph.graph import END, MessagesState, START, StateGraph
 
 ### LLM
 
-llm = ChatOpenAI(model="gpt-4o", temperature=0) 
+llm = ChatAnthropic(model="claude-haiku-4-5-20251001", temperature=0) 
 
 ### Schema 
 
@@ -224,14 +224,14 @@ When answering questions, follow these guidelines:
 
 5. List your sources in order at the bottom of your answer. [1] Source 1, [2] Source 2, etc
         
-6. If the source is: <Document source="assistant/docs/llama3_1.pdf" page="7"/>' then just list: 
+6. If the source is: <Document source="assistant/docs/llama3_1.md" page="7"/>' then just list: 
         
-[1] assistant/docs/llama3_1.pdf, page 7 
-        
+[1] assistant/docs/llama3_1.md, page 7 
+
 And skip the addition of the brackets as well as the Document source preamble in your citation."""
 
 def generate_answer(state: InterviewState):
-    
+
     """ Node to answer a question """
 
     # Get state
@@ -264,7 +264,7 @@ def save_interview(state: InterviewState):
 
 def route_messages(state: InterviewState, 
                    name: str = "expert"):
-
+    
     """ Route between question and answer """
     
     # Get messages
@@ -288,7 +288,7 @@ def route_messages(state: InterviewState,
         return 'save_interview'
     return "ask_question"
 
-# Write a summary (section of the final report) of the interview
+# Write a summary of the interview
 section_writer_instructions = """You are an expert technical writer. 
             
 Your task is to create a short, easily digestible section of a report based on a set of source documents.
@@ -302,32 +302,48 @@ Your task is to create a short, easily digestible section of a report based on a
         
 3. Write the report following this structure:
 a. Title (## header)
-b. Summary (### header)
-c. Sources (### header)
+b. Summary (### header): Begin with a high-level summary of the main points.
+c. Sources (### header): A single list of all sources used in the report, formatted as [1], [2], etc.
+d. Detailed Findings (### header): Provide a detailed analysis of each finding, including relevant sources.
 
 4. Make your title engaging based upon the focus area of the analyst: 
 {focus}
 
-5. For the summary section:
-- Set up summary with general background / context related to the focus area of the analyst
-- Emphasize what is novel, interesting, or surprising about insights gathered from the interview
-- Create a numbered list of source documents, as you use them
-- Do not mention the names of interviewers or experts
-- Aim for approximately 400 words maximum
-- Use numbered sources in your report (e.g., [1], [2]) based on information from source documents
+5. For the summary section, which comes first:
+- What noticeable themes, ideas, or trends emerge from the sources?
+- Write a bullet point list that highlights these themes.
         
-6. In the Sources section:
-- Include all sources used in your report
-- Provide full links to relevant websites or specific document paths
-- Separate each source by a newline. Use two spaces at the end of each line to create a newline in Markdown.
-- It will look like:
+6. For the detailed findings section:
+- Go deeper into each theme or idea.
+- Include a section header for each theme.
+- Include relevant sources in your discussion of the theme.
 
-### Sources
-[1] Link or Document name
-[2] Link or Document name
+7. Final review:
+- Ensure the report follows the required structure.
+- Include no preamble before the title of the report.
+- Check that all guidelines have been followed.
 
-7. Be sure to combine sources. For example this is not correct:
+8. When formatting sources, follow this convention:
+- If the source is: <Document source="assistant/docs/llama3_1.md" page="7"/>' 
+- Then cite as: [1] assistant/docs/llama3_1.md, page 7
+- List all sources at the end in the Sources section.
+- Reference them in-line using [1], [2], etc. throughout the report.
+- Do not add any extraneous information to the source reference.
+- Keep source references clean and formatted consistently.
 
+Example of proper source formatting:
+
+If you have 4 sources and the first two are identical, your sources list should be:
+
+[1] https://ai.meta.com/blog/meta-llama-3-1/
+[2] https://ai.meta.com/blog/meta-llama-3-1/
+[3] https://github.com/meta-llama/llama-models/tree/main
+[4] https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+
+If there are identical sources like:
+
+[1] https://ai.meta.com/blog/meta-llama-3-1/
+[2] https://github.com/meta-llama/llama-models/tree/main
 [3] https://ai.meta.com/blog/meta-llama-3-1/
 [4] https://ai.meta.com/blog/meta-llama-3-1/
 
