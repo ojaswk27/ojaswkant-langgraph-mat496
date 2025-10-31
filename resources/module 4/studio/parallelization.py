@@ -5,7 +5,7 @@ from typing_extensions import TypedDict
 from langchain_core.documents import Document
 from langchain_core.messages import HumanMessage, SystemMessage
 
-from langchain_community.document_loaders import WikipediaLoader
+from langchain_community.document_loaders import ArxivLoader
 from langchain_tavily import TavilySearch  # updated 1.0
 
 from langchain_anthropic import ChatAnthropic
@@ -38,18 +38,18 @@ def search_web(state):
 
     return {"context": [formatted_search_docs]} 
 
-def search_wikipedia(state):
+def search_arxiv(state):
     
-    """ Retrieve docs from wikipedia """
+    """ Retrieve docs from ArXiv """
 
     # Search
-    search_docs = WikipediaLoader(query=state['question'], 
-                                  load_max_docs=2).load()
+    search_docs = ArxivLoader(query=state['question'], 
+                              load_max_docs=2).load()
 
      # Format
     formatted_search_docs = "\n\n---\n\n".join(
         [
-            f'<Document source="{doc.metadata["source"]}" page="{doc.metadata.get("page", "")}"/>\n{doc.page_content}\n</Document>'
+            f'<Document source="{doc.metadata.get("entry_id", doc.metadata.get("Entry ID", "arxiv"))}" title="{doc.metadata.get("Title", "")}"/>\n{doc.page_content[:1000]}...\n</Document>'
             for doc in search_docs
         ]
     )
@@ -80,13 +80,13 @@ builder = StateGraph(State)
 
 # Initialize each node with node_secret 
 builder.add_node("search_web",search_web)
-builder.add_node("search_wikipedia", search_wikipedia)
+builder.add_node("search_arxiv", search_arxiv)
 builder.add_node("generate_answer", generate_answer)
 
 # Flow
-builder.add_edge(START, "search_wikipedia")
+builder.add_edge(START, "search_arxiv")
 builder.add_edge(START, "search_web")
-builder.add_edge("search_wikipedia", "generate_answer")
+builder.add_edge("search_arxiv", "generate_answer")
 builder.add_edge("search_web", "generate_answer")
 builder.add_edge("generate_answer", END)
 graph = builder.compile()
