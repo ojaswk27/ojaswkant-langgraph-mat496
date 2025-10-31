@@ -112,7 +112,7 @@ Since we are heading towards a more research oriented application, I replaced Wi
 ![img_4.png](img_4.png)
 
 ## Video 2: Sub-graphs
-[sub-graph.ipynb](resources/module%204/sub-graph.ipynb)
+[sub-graph.ipynb](resources/module 4/studio/sub-graph.ipynb)
 [sub_graphs.py](resources/module%204/studio/sub_graphs.py)
 [sub-graph-healthcare.ipynb](resources/module%204/sub-graph-healthcare.ipynb)
 This lesson is about how to create nested graphs with independent states used for building modular multi-agent systems. Parent and child graphs can tlak using overlapping keys. Shared state keys allow data flow. Notable problem; a subgraph outputs all state keys even if unmodified, which can cause "collisions". A solution is to define output schemas that specify what keys will be returned to the parent.
@@ -124,7 +124,15 @@ Thought of and made an application for this demonstrating how this can be useful
 [literature_review.ipynb](resources/module%204/literature_review.ipynb)
 The third video teaches map-reduce, which is a way to break big tasks into smaller pieces and run them all at once. The map phase uses the send() API to automatically create multiple copies of a node for each item in a list (like making a joke about different animals). These nodes all run at the same time and write their results to a shared list using a reducer
 The reduce phase combines all those results together (like picking the best joke from all the ones you made). You don't need to know how many items you'll have ahead of time, the graph creates the right number of nodes automatically.
+Changed the code to use anthropic instead of openai.
 
-
+## Final video: Research Assistant
+[research-assistant.ipynb](resources/module%204/research-assistant.ipynb)
+[research_assistant.py](resources/module%204/studio/research_assistant.py)
+[research-assistant-improved.ipynb](resources/module%204/research-assistant-improved.ipynb)
+The last video is about implementing the interview phase of the multi-agent research assistant, in this phase, each analyst has a back-and-forth conversation with an expert to gather research information. The analyst generates questions based on their persona (role, affiliation and goals) which is included in their system message. A clever end-of-conversation signal is used, "thank you so much for your help" when they're done researching, which acts as a signal to end the conversation. The expert responds to the analyst questions using Tavily web search and Wikipedia as sources. All messsages are stored in the state to keep track of convo history. This creates a realistic interview-type research process where AI analysts gather information from an AI expert that has access to real sources.
+I have made a different version of this, where I have improved upon the original by adding additional sources (AxXiv and DuckDuckGo search) and enhanced the output quality using a fact-checking step, executive summaries, citation verification, and source prioritization. Semantic Scholar is used for their free API
+The new graph looks like this:
+![img_6.png](img_6.png)
 
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
