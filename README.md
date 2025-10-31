@@ -111,4 +111,15 @@ This video teaches how to implement fan-out and fan-in patterns where multiple n
 Since we are heading towards a more research oriented application, I replaced Wikipedia with ArXiv, and also claude instead of chatgpt. ArXiv is an open-access online repo for scientific articles and papers, mostly in fields like physics, mathematics, computer science and more.
 ![img_4.png](img_4.png)
 
+## Video 2: Sub-graphs
+[sub-graph.ipynb](resources/module%204/sub-graph.ipynb)
+[sub_graphs.py](resources/module%204/studio/sub_graphs.py)
+[sub-graph-healthcare.ipynb](resources/module%204/sub-graph-healthcare.ipynb)
+This lesson is about how to create nested graphs with independent states used for building modular multi-agent systems. Parent and child graphs can tlak using overlapping keys. Shared state keys allow data flow. Notable problem; a subgraph outputs all state keys even if unmodified, which can cause "collisions". A solution is to define output schemas that specify what keys will be returned to the parent.
+Thought of and made an application for this demonstrating how this can be useful in a medical scenario, using both paralell and sub-graphs.
+![img_5.png](img_5.png)
+
+## Video 3: 
+
+
 I have edited each file to work with Anthropic instead of OpenAI because I don't have credits, so in some places I had to change and rewrite some functionality.
