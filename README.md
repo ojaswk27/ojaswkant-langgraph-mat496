@@ -131,7 +131,7 @@ Changed the code to use anthropic instead of openai.
 [research_assistant.py](resources/module%204/studio/research_assistant.py)
 [research-assistant-improved.ipynb](resources/module%204/research-assistant-improved.ipynb)
 The last video is about implementing the interview phase of the multi-agent research assistant, in this phase, each analyst has a back-and-forth conversation with an expert to gather research information. The analyst generates questions based on their persona (role, affiliation and goals) which is included in their system message. A clever end-of-conversation signal is used, "thank you so much for your help" when they're done researching, which acts as a signal to end the conversation. The expert responds to the analyst questions using Tavily web search and Wikipedia as sources. All messsages are stored in the state to keep track of convo history. This creates a realistic interview-type research process where AI analysts gather information from an AI expert that has access to real sources.
-I have made a different version of this, where I have improved upon the original by adding additional sources (AxXiv and DuckDuckGo search) and enhanced the output quality using a fact-checking step, executive summaries, citation verification, and source prioritization. Semantic Scholar is used for their free API
+I have made a different version of this, where I have improved upon the original by adding additional sources (AxXiv and DuckDuckGo search) and enhanced the output quality using a fact-checking step, executive summaries, citation verification, and source prioritization. Semantic Scholar is used for their free API.
 The new graph looks like this:
 ![img_6.png](img_6.png)
 
